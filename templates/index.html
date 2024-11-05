@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Details</h2>
+        {% if employee %}
+            <div class="detail"><strong>Employee Number:</strong> {{ employee['empno'] }}</div>
+            <div class="detail"><strong>Employee Name:</strong> {{ employee['ename'] }}</div>
+            <div class="detail"><strong>Job Title:</strong> {{ employee['job'] }}</div>
+            <div class="detail"><strong>Hire Date:</strong> {{ employee['hiredate'] }}</div>
+            <div class="detail"><strong>Manager ID:</strong> {{ employee['mgr'] }}</div>
+            <div class="detail"><strong>Commission:</strong> {{ employee['comm'] }}</div>
+            <div class="detail"><strong>Department Number:</strong> {{ employee['deptno'] }}</div>
+        {% else %}
+            <p>No employee data found.</p>
+        {% endif %}
+        <div class="footer">
+            &copy; 2024 Employee Management System | <a href="https://example.com">Visit Us</a>
+        </div>
+    </div>
+</body>
+</html>
